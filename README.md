@@ -42,7 +42,7 @@ Users should be able to:
 
 ### What I learned
 
-1) Loaders and Scrollbars
+#### Loaders and Scrollbars
    Wanting to add my own "touch of collor" to this project, I decided to investigate how loaders are accomplished and how scrollbars can be customized. This was surprisingly easy to accomplish thanks to W3School documentation. Kudos to it.
 ```css
 *::-webkit-scrollbar {
@@ -60,7 +60,7 @@ Users should be able to:
 }
 ```
 
-2) Animations
+#### Animations
    "What is a website these days without some animations ?" This question sent me down the rabbit hole but in the end it somehow turned out ok. There is definetly space for improvement and for more complexity.
 ```css
 .animate-left {
@@ -96,7 +96,7 @@ Users should be able to:
     }
 ``` 
 
-3) A bit of JS
+#### A bit of JS
    Even though there's not much and the bits that exist are poorly written, the time spent fiddling with it has definetly created a new attraction to this language and the creative options that it presents.
 ```js
 function showPage() {
@@ -110,12 +110,12 @@ function showPage() {
 ### Continued development
 
 This project has determined me to do two things :
-1) Install Tailwind and fiddle with it ( I love making my own utility classes but figma files wont always be available and without those, creating classes will be much harder )
-2) Explore the world of web animations ( First on the list will be Appear-based-on-scroll. Maybe in the far future I'll be able to replicate the Ipods website, who knows ? ) 
+ - Install Tailwind and fiddle with it ( I love making my own utility classes but figma files wont always be available and without those, creating classes will be much harder )
+ - Explore the world of web animations ( First on the list will be Appear-based-on-scroll. Maybe in the far future I'll be able to replicate the Ipods website, who knows ? ) 
 
 ### Useful resources
 
-- [Loader](https://www.w3schools.com/howto/howto_css_loader.asp) - This helped me create a loader.
+- [W3Schools Loader Guide](https://www.w3schools.com/howto/howto_css_loader.asp) - This helped me create a loader.
 
 ## Author
 
