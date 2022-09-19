@@ -1,0 +1,872 @@
+:root {
+
+    /* Colors + Gradient */
+    --clr-blue-dark: rgb(23, 35, 57);
+    --clr-grey: rgb(73, 86, 109);
+    --clr-cream: rgb(243, 237, 231);
+    --clr-cream-white: rgb(250, 248, 246);
+    --clr-purple: rgb(160, 96, 255);
+    --clr-purple-bright: rgb(203, 48, 227);
+    --clr-orange: rgb(255, 168, 78);
+
+    --grd-purple-yellow: linear-gradient(135deg, hsla(264, 100%, 69%, 1) 0%, hsla(292, 76%, 54%, 1) 50%, hsla(31, 100%, 65%, 1) 100%);
+
+    /* Typography */
+    --ff-primary: 'Epilogue', sans-serif;
+    --ff-body: var(--ff-primary);
+    --ff-heading: var(--ff-primary);
+    --ff-footer: var(--ff-primary);
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fs-body: 1rem;
+    --fs-footer: 0.9375rem;
+    --fs-quote: 1.125rem;
+    --fs-heading-XL: 2.375rem;
+    --fs-heading-L: 2.5rem;
+    --fs-heading-M: 1.125rem;
+    --fs-heading-S: 1rem;
+    --fs-btn-primary: 1.125rem;
+    --fs-btn-secondary: 0.875rem;
+    --fs-statistic-num: 3rem;
+
+    --lh-body: 1.75rem;
+    --lh-footer: 2rem;
+    --lh-quote: 2rem;
+    --lh-heading-XL: 2.75rem;
+    --lh-heading-L: 3rem;
+    --lh-heading-M: 2rem;
+    --lh-heading-S: 1.625rem;
+    --lh-btn-primary: 2rem;
+    --lh-btn-secondary: 1.5rem;
+    --lh-statistic-num: 3.5rem;
+
+    --ls-body: 0rem;
+    --ls-footer: 0rem;
+    --ls-quote: 0rem;
+    --ls-heading-XL: -0.0329rem;
+    --ls-heading-L: -0.026rem;
+    --ls-heading-M: 0.0125rem;
+    --ls-heading-S: 0.15625rem;
+    --ls-btn-primary: -0.01125rem;
+    --ls-btn-secondary: -0.00875rem;
+    --ls-statistic-num: 0rem;
+
+}
+
+@media(min-width:48em) {
+    :root {
+        --fs-heading-XL: 3.5rem;
+        --fs-btn-secondary: 1rem;
+
+        --lh-heading-XL: 4rem;
+        --lh-btn-secondary: 2rem;
+
+        --ls-heading-XL: -0.0486rem;
+        --ls-btn-secondary: -0.01rem;
+    }
+}
+
+@media(min-width:64em) {
+    :root {
+        --fs-body: 1.125rem;
+        --fs-quote: 1.25rem;
+        --fs-heading-XL: 4.5rem;
+        --fs-heading-L: 3rem;
+
+        --lh-body: 2rem;
+        --lh-quote: 2.1875rem;
+        --lh-heading-XL: 4.875rem;
+        --lh-heading-L: 3.5rem;
+
+        --ls-heading-XL: -0.0625rem;
+        --ls-heading-L: -0.03125rem;
+    }
+}
+
+
+/* Reset*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Utility Classes */
+.font-body {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    letter-spacing: var(--ls-body);
+    font-weight: var(--fw-regular);
+}
+
+.font-footer {
+    font-size: var(--fs-footer);
+    line-height: var(--lh-footer);
+    letter-spacing: var(--ls-footer);
+    font-weight: var(--fw-regular);
+}
+
+.font-quote {
+    font-size: var(--fs-quote);
+    line-height: var(--lh-quote);
+    letter-spacing: var(--ls-quote);
+    font-weight: var(--fw-regular);
+}
+
+.font-heading-XL {
+    font-size: var(--fs-heading-XL);
+    line-height: var(--lh-heading-XL);
+    letter-spacing: var(--ls-heading-XL);
+    font-weight: var(--fw-bold);
+}
+
+.font-heading-L {
+    font-size: var(--fs-heading-L);
+    line-height: var(--lh-heading-L);
+    letter-spacing: var(--ls-heading-L);
+    font-weight: var(--fw-bold);
+}
+
+.font-heading-M {
+    font-size: var(--fs-heading-M);
+    line-height: var(--lh-heading-M);
+    letter-spacing: var(--ls-heading-M);
+    font-weight: var(--fw-bold);
+}
+
+.font-heading-S {
+    font-size: var(--fs-heading-S);
+    line-height: var(--lh-heading-S);
+    letter-spacing: var(--ls-heading-S);
+    font-weight: var(--fw-regular);
+}
+
+.font-btn-secondary {
+    font-size: var(--fs-btn-secondary);
+    line-height: var(--lh-btn-secondary);
+    letter-spacing: var(--ls-btn-secondary);
+    font-weight: var(--fw-bold);
+}
+
+.font-btn-primary {
+    font-size: var(--fs-btn-primary);
+    line-height: var(--lh-btn-primary);
+    letter-spacing: var(--ls-btn-primary);
+    font-weight: var(--fw-bold);
+}
+
+.font-statistic-num {
+    font-size: var(--fs-statistic-num);
+    line-height: var(--lh-statistic-num);
+    letter-spacing: var(--ls-statistic-num);
+    font-weight: var(--fw-bold);
+}
+
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.block {
+    display: block;
+}
+
+
+/* General Styling */
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    background-color: var(--clr-cream-white);
+}
+
+footer {
+    background-color: var(--clr-cream);
+}
+
+
+/* Buttons */
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: rgb(23, 35, 57);
+    inherits: false;
+}
+
+@property --myColor2 {
+    syntax: '<color>';
+    initial-value: rgb(23, 35, 57);
+    inherits: false;
+}
+
+@property --myColor3 {
+    syntax: '<color>';
+    initial-value: rgb(23, 35, 57);
+    inherits: false;
+}
+
+.btn-primary {
+    padding: 1.25rem 1.9375rem 1.3125rem 2rem;
+    background: linear-gradient(135deg, var(--myColor1) 0%, var(--myColor2) 50%, var(--myColor3) 100%);
+    border-radius: 0.375rem;
+    text-decoration: none;
+    color: var(--clr-cream-white);
+
+    transition: --myColor1 0.3s, --myColor2 0.3s, --myColor3 0.3s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    --myColor1: hsla(264, 100%, 69%, 1);
+    --myColor2: hsla(292, 76%, 54%, 1);
+    --myColor3: hsla(31, 100%, 65%, 1);
+}
+
+.btn-secondary {
+    padding: 0.75rem 1.03125rem 0.75rem 0.96875rem;
+    background-color: var(--clr-cream-white);
+    border-radius: 0.375rem;
+    border: 1px solid var(--clr-blue-dark);
+    text-decoration: none;
+    color: var(--clr-blue-dark);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+    background-color: var(--clr-blue-dark);
+    color: var(--clr-cream-white);
+}
+
+@media(min-width:48em) {
+    .btn-secondary {
+        padding: 0.75rem 1.53125rem 0.75rem 1.46875rem;
+    }
+}
+
+
+/* Containers */
+.container {
+    width: min(100% - 2rem, 69.375rem);
+    margin-inline: auto;
+}
+
+.container-review {
+    width: 100%;
+    background-color: var(--clr-blue-dark);
+    border-radius: 15px;
+}
+
+.container-footer {
+    width: 100%;
+}
+
+@media(min-width:48em) {
+
+    .container {
+        width: min(100% - 5rem, 69.375rem);
+        margin-inline: auto;
+    }
+
+    .container-review {
+        width: min(100% - 5rem, 69.375rem);
+        margin-inline: auto;
+    }
+
+    .container-footer {
+        width: min(100% - 5rem, 69.375rem);
+        margin-inline: auto;
+    }
+}
+
+
+/* Navigation */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    /* No "align-items:center" because button is off-centered */
+}
+
+.logo {
+    padding-block: 0.5em;
+    width: 5.0625rem;
+    /* width explicited in case font size is increased */
+    /* height: 2rem; */
+    /* height is commented because it causes weird bug */
+    /* ems because it provides better padding than rems */
+}
+
+@media(min-width:48em) {
+    .logo {
+        padding-block: 0.75em;
+    }
+}
+
+
+/* Hero */
+.hero {
+    margin-top: 3.5rem;
+    margin-bottom: 14.8125rem;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem 0rem;
+}
+
+.hero-entry {
+    position: relative;
+    /* border: 2px solid green; */
+}
+
+.hero-entry h1 {
+    color: var(--clr-blue-dark);
+    max-width: 21.4375rem;
+}
+
+.hero-word-line {
+    position: relative;
+}
+
+.hero-word-line img {
+    position: absolute;
+    width: 100%;
+    /* adapts to the width of the word "solution" */
+    top: -75%;
+    right: 0%;
+}
+
+.hero-entry p {
+    margin-block: 2rem;
+    color: var(--clr-grey);
+}
+
+.hero-statistics {
+    /* border: 2px solid red; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem 0rem;
+}
+
+.hero-statistics p {
+    color: var(--clr-grey);
+    text-align: center;
+}
+
+.hero-statistic-num {
+    display: block;
+    color: var(--clr-blue-dark);
+}
+
+.hero-image-mobile {
+    margin-inline: auto;
+    width: 21.4375rem;
+    /*width explicited to size the image accordingly and to keep the style corect in case font size change */
+}
+
+.hero-image-tablet {
+    display: none;
+    position: absolute;
+    width: 17.5625rem;
+    /*width explicited to size the image accordingly and to keep the style corect in case font size change */
+    /* height: 30.125rem; */
+    /* height can be omited but turn on in case of bugs */
+    top: -20%;
+    right: 0%;
+    z-index: -1;
+}
+
+.hero-image-desktop {
+    display: none;
+    position: absolute;
+    width: 21.875rem;
+    /*width explicited to size the image accordingly and to keep the style corect in case font size change */
+    height: 37.5rem;
+    /* height can be omited but turn on in case of bugs */
+    top: -30%;
+    right: -30%;
+    z-index: -1;
+}
+
+@media(max-width:21.3125em) {
+    .hero-word-line img {
+        display: none;
+    }
+}
+
+@media(min-width:48em) {
+
+    .hero {
+        margin-top: 10.5rem;
+        margin-bottom: 17.0625rem;
+    }
+
+    .hero-entry h1 {
+        max-width: 30.875rem;
+    }
+
+    .hero-entry p {
+        max-width: 21.875rem;
+    }
+
+    .hero-image-mobile {
+        display: none;
+    }
+
+    .hero-image-tablet {
+        display: unset;
+    }
+
+    .hero-statistics {
+        flex-direction: row;
+        align-items: initial;
+        justify-content: center;
+        gap: 0rem 7.5rem;
+    }
+}
+
+@media(min-width:64em) {
+
+    .wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hero {
+        margin-top: 10.625rem;
+        margin-bottom: 18.1875rem;
+    }
+
+    .hero-entry h1 {
+        max-width: 39.6875rem;
+    }
+
+    .hero-image-tablet {
+        display: none;
+    }
+
+    .hero-image-desktop {
+        display: unset;
+    }
+
+    .hero-statistics {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem 0rem;
+    }
+
+    .hero-statistics p {
+        text-align: start;
+    }
+
+}
+
+
+@media(min-width:90em) {
+    .hero-statistics {
+        margin-right: 4.4375rem;
+        transition: margin-right 1s;
+    }
+}
+
+@media(max-width:90em) {
+    .hero-statistics {
+        margin-right: 0rem;
+        transition: margin-right 1s;
+    }
+}
+
+/* Review */
+
+.wrapper-review {
+    position: relative;
+    margin-inline: 1rem;
+    padding-top: 16.3125rem;
+    padding-bottom: 4rem;
+}
+
+.wrapper-review h2 {
+    text-align: center;
+    color: white;
+}
+
+.quote {
+    text-align: center;
+    color: white;
+    padding-block: 2.5rem;
+}
+
+.author {
+    text-align: center;
+    color: white;
+}
+
+.curved-line-1 {
+    width: 3.079rem;
+    height: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-inline: auto;
+}
+
+.curved-line-2 {
+    width: 4rem;
+    height: 3.25rem;
+    position: absolute;
+    display: none;
+    top: 30%;
+    left: -7.5rem;
+}
+
+.jeremy-1 {
+    position: absolute;
+    width: 15.1875rem;
+    height: 25.125rem;
+    top: -10.9375rem;
+    left: 52%;
+    margin-left: -7.59375rem;
+}
+
+.jeremy-2 {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    left: -34rem;
+    width: 23.4375rem;
+    height: 37.5rem;
+    max-width: none;
+}
+
+@media(min-width:48em) {
+    .wrapper-review {
+        margin-inline: 3.625rem;
+    }
+}
+
+@media(min-width:64em) {
+    .wrapper-review {
+        padding-top: 5.5rem;
+        padding-bottom: 5.5rem;
+        margin-right: 7.8125rem;
+        margin-left: 39.625rem;
+    }
+
+    .wrapper-review h2 {
+        text-align: unset;
+    }
+
+    .quote {
+        text-align: unset;
+    }
+
+    .author {
+        text-align: unset;
+    }
+
+    .curved-line-1 {
+        display: none;
+    }
+
+    .curved-line-2 {
+        display: unset;
+    }
+
+    .jeremy-1 {
+        display: none;
+    }
+
+    .jeremy-2 {
+        display: unset;
+    }
+
+}
+
+/* Footer */
+
+footer {
+    position: relative;
+}
+
+.rectangle-cream {
+    position: absolute;
+    width: 100%;
+    height: 27.1875rem;
+    background-color: var(--clr-cream);
+    top: -27.1875rem;
+    z-index: -1;
+}
+
+.wrapper-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.0625rem;
+    padding-top: 3.5rem;
+    padding-bottom: 5rem;
+}
+
+.footer-logo {
+    width: 5.0625rem;
+}
+
+.wrapper-footer p {
+    font-size: 0.9375rem;
+    line-height: 2rem;
+    letter-spacing: 0.0051rem;
+    color: var(--clr-grey);
+}
+
+.icons {
+    display: flex;
+    gap: 1.75rem;
+}
+
+@media(min-width:48em) {
+    .wrapper-footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media(min-width:64em) {
+    .rectangle-cream {
+        height: 18rem;
+        top: -18rem;
+    }
+}
+
+.icons a:hover,
+.icons a:focus-visible {
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+/* Scroll bar */
+
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #D64AC2#9e9e9e;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgb(216, 202, 190);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-image: var(--grd-purple-yellow);
+    border-radius: 10px;
+    border: 0px none #ffffff;
+}
+
+/* Pre-Loader */
+
+#loader {
+    color: var(--clr-blue-dark);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    -webkit-animation: fadeIn 0.5s linear;
+    animation: fadeIn 0.5s linear;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#element-1,
+#element-2,
+#element-3 {
+    display: none;
+}
+
+@media(max-width:64em) {
+    .appear-fadeIn {
+        -webkit-animation-name: fadeIn;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fadeIn;
+        animation-duration: 1.5s
+    }
+}
+
+/* Start-up animation */
+@media(min-width:64em) {
+
+    #item-1,
+    #item-2,
+    #item-3,
+    #item-5,
+    #item-6,
+    #item-7 {
+        display: none;
+    }
+
+    .animate-fadeIn {
+        -webkit-animation-name: fadeIn;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fadeIn;
+        animation-duration: 1.5s
+    }
+
+    .animate-left {
+        position: relative;
+        -webkit-animation-name: animateleft;
+        -webkit-animation-duration: 1.5s;
+        animation-name: animateleft;
+        animation-duration: 1.5s
+    }
+
+    @-webkit-keyframes animateleft {
+        from {
+            left: -100px;
+            opacity: 0
+        }
+
+        to {
+            left: 0px;
+            opacity: 1
+        }
+    }
+
+    @keyframes animateleft {
+        from {
+            left: -100px;
+            opacity: 0
+        }
+
+        to {
+            left: 0;
+            opacity: 1
+        }
+    }
+
+    .animate-top {
+        position: relative;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 1.6s;
+        animation-name: animatetop;
+        animation-duration: 1.5s
+    }
+
+    @-webkit-keyframes animatetop {
+        from {
+            top: -100px;
+            opacity: 0
+        }
+
+        to {
+            top: 0px;
+            opacity: 1
+        }
+    }
+
+    @keyframes animatetop {
+        from {
+            top: -100px;
+            opacity: 0
+        }
+
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
+}
